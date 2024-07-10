@@ -1,0 +1,14 @@
+{% extends 'wagtailadmin/login.html' %}
+{% load static %}
+
+{% comment %} {% block branding_logo %}
+  <img src="{% static 'images/waveland-logo.png' %}" alt="Custom Project" width="80" />
+{% endblock %} {% endcomment %}
+
+{% block branding_logo %}
+<!-- This block is intentionally left empty to disable the branding logo -->
+{% endblock %}
+
+{% block branding_login %}
+  Sign in to Waveland Investment CMS
+{% endblock %}

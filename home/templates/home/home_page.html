@@ -1,0 +1,21 @@
+
+{% extends 'home/home_base.html' %}
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}
+  Home Page
+{% endblock %}
+
+{% block extra_css %}
+  {% comment %}Delete the line below if you're just getting started and want to remove the welcome screen!{% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <!-- home/templates/home/home_page.html -->
+  
+  {% comment %}Delete the line below if you're just getting started and want to remove the welcome screen!{% endcomment %}
+  {% include 'home/welcome_page.html' %}
+  <div class="flex gap-14">{{ footer_template.content|richtext }}</div>
+{% endblock %}
