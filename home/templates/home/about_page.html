@@ -1,0 +1,24 @@
+{% extends 'home/home_base.html' %}
+
+{% load static %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}
+  Home Page
+{% endblock %}
+
+{% block extra_css %}
+  {% comment %}Delete the line below if you're just getting started and want to remove the welcome screen!{% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="flex mt-10 justify-center">
+    <div class="w-[800px]">
+      <h2 class="font-bold mb-3 text-3xl">About Waveland</h2>
+      <p class="mb-2">Waveland Energy Partners LLC and its affiliates have sponsored more than 40 energy-related investments since 2000. With experience in drilling, land acquisition, and private equity investing in the energy sector, we have developed and refined an income and growth investment strategy. We invest alongside leading energy companies in a diversified portfolio of drill-ready projects in the core of the prolific Bakken in North Dakota. Our affiliate, Waveland Resources LLC, offers private limited partnership opportunities tailored for wealth advisors associated with independent broker-dealers and registered investment advisory firms nationwide. Our distinctive total return strategy prioritizes economic returns to investors while offering the substantial tax benefits of energy investing. We intend to continue executing our strategy of aggregating high-quality oil-focused assets to generate tax-advantaged current income, build asset value by reinvesting a portion of the project’s operating income and realize long-term growth potential through the sale of the assets.</p>
+      <p>Over the past 20 years, Waveland Energy Partners has sponsored or served as managing general partner for more than 40 energy programs. Waveland has been active in the Mid-Continent region in Oklahoma since 2002, the Permian Basin in Texas since 2012, the San Juan Basin in New Mexico since 2016, and the Williston Basin since 2018. We invest alongside many of the largest and most active E&P companies in North America. Please view the below tombstones of Waveland’s portfolio of investment activities.</p>
+    </div>
+  </div>
+  <div class="flex flex-col items-center gap-1 bg-black text-white p-5">{{ footer_template.content|richtext }}</div>
+{% endblock %}

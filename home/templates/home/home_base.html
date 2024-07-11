@@ -23,8 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-
-     {# Global stylesheets #}
+    {# Global stylesheets #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}" />
 
     {% block extra_css %}
@@ -33,16 +32,21 @@
     {% endblock %}
   </head>
 
-  <body class="{% block body_class %}
-    {% endblock %}">
-     {% block content %}
-    {% endblock %} {# Global javascript
-    #}
-    {% comment %} <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script> {% endcomment %}
+  <body class="{% block body_class %}{% endblock %}">
+    <div>
+    {% block sidebar %}
+      {% include 'home/sidebar.html' %}
+    {% endblock %}
+    </div>
+    <div class="flex flex-col justify-between">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+
 
     {% block extra_js %}
-      {# Override this in templates to add extra javascript
-    #}
+    
     {% endblock %}
   </body>
 </html>
